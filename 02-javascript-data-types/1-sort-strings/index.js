@@ -5,5 +5,8 @@
  * @returns {string[]}
  */
 export function sortStrings(arr, param = 'asc') {
-
+  return arr.concat().sort(function(a, b) {
+    const sign = a.localeCompare(b, 'ru', { caseFirst: 'upper'});
+    return (param === 'asc') ? sign : -sign;
+  });
 }
